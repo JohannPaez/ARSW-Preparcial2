@@ -19,10 +19,10 @@ public class AirportFinderServices {
 		
 		if (serviceCache.isThereCache(name)) {
 			airports = serviceCache.getCache(name);
+			System.out.println("Consumio CACHE!");
 		} else {
 			airports = serviceHttp.getAirportsByName(name);
 			serviceCache.saveCache(name, airports);
-			System.out.println("Consumio Api");
 		}
 		
 		return airports;

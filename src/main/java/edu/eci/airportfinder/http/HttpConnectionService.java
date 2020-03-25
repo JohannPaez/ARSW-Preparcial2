@@ -1,9 +1,13 @@
 package edu.eci.airportfinder.http;
 
+import org.springframework.stereotype.Component;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
+
+@Component
 public class HttpConnectionService {
 	
 	
@@ -15,7 +19,6 @@ public class HttpConnectionService {
 					.header("x-rapidapi-key", "54276a88a3msh34d1a569336cf16p1e0818jsn40847117ffe2")
 					.asString();
 			Json = response.getBody();
-			System.out.println(Json);
 		} catch (UnirestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -16,7 +16,7 @@ public class AirportFinderCache {
 	
 	public boolean isThereCache(String name) {
 		boolean isThereCache = false;
-		if (cacheByName.contains(name) && System.currentTimeMillis() - cacheByName.get(name).getTiempo() <= 1000 * 60 * 5) {
+		if (cacheByName.get(name) != null && System.currentTimeMillis() - cacheByName.get(name).getTiempo() <= 1000 * 60 * 5) {
 			isThereCache = true;
 		}	
 		return isThereCache;
