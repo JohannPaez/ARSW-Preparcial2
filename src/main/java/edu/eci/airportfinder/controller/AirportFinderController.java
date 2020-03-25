@@ -21,4 +21,19 @@ public class AirportFinderController {
 	public ResponseEntity<?> getAiportsByName(@PathVariable String name){
 		return new ResponseEntity<>(services.getAirportsByName(name),HttpStatus.ACCEPTED);
 	}
+	
+	
+	
+	@RequestMapping(value = "/api/{name}", method = RequestMethod.GET)
+    public ResponseEntity<?> getAllApi(@PathVariable String name){
+		System.out.println("ENTRA API");
+		return new ResponseEntity<>(services.getAllApi(),HttpStatus.ACCEPTED);
+    }
+	
+	@RequestMapping(value = "/parcial/{name}", method = RequestMethod.GET)
+    public ResponseEntity<?> getApiParcial(@PathVariable String name){
+		System.out.println("ENTRA PARCIAL");
+		return new ResponseEntity<>(services.getApiParcial(name),HttpStatus.ACCEPTED);
+    }
+
 }
